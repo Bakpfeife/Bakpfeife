@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  vars_files: passwords.yml
+  vars:
+    ansible_sudo_pass: "{{vars[inventory_hostname + '_sudopass']}}"
+    type:
+      - update-server
+      - thor
+  roles:
+    - fail2ban
+    - nftables

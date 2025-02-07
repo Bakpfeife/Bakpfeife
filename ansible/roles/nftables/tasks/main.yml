@@ -1,0 +1,20 @@
+---
+- name: install nftables
+  apt:
+    name: nftables
+    state: present
+
+- name: Replace NFT config
+  copy:
+    src: files/nftables.conf
+    dest: /etc/nftables.conf
+    force: yes
+
+- name: Check Config for Issues
+  command: nft -f /etc/nftables.conf
+
+- name: Restart service
+  systemd:
+    name: nftables
+    state: restarted
+    enabled: yes  

@@ -1,0 +1,28 @@
+---
+- name: install fail2ban
+  apt:
+    name: fail2ban
+    state: present
+
+- name: Replace F2B config
+  copy:
+    src: files/fail2ban.conf
+    dest: /etc/fail2ban/fail2ban.conf
+    force: yes
+
+- name: Replace Jail Config
+  copy:
+    src: files/jail.conf
+    dest: /etc/fail2ban/jail.conf
+    force: yes
+
+- name: Add default jails config
+  copy:
+    src: files/jail.d/base.conf
+    dest: /etc/fail2ban/jail.d/base.conf
+
+- name: restart fail2ban
+  systemd:
+    name: fail2ban
+    state: restarted
+    enabled: yes
