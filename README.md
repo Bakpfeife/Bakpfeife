@@ -1,4 +1,4 @@
-I honestly just enjoy frogs, my Fiancé(gotta update this in a couple years), good whiskey/cider and the forest. 
+I honestly just enjoy frogs, my Wife, good whiskey/cider and the forest. 
 Trying to leech off of other peoples work here but will probably end up helping some along the way.
 
 
